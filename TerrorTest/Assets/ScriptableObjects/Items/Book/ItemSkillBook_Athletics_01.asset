@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346955f2027246a7b0dc4d690f94afb3, type: 3}
+  m_Name: ItemSkillBook_Athletics_01
+  m_EditorClassIdentifier: 
+  ID: ath01
+  Name: Physics about Training Sessions Vol. I
+  Icon: {fileID: -775481085, guid: f824de00e14807a4e98aa86d7570f3eb, type: 3}
+  Description: This initial volume delves into the intricate laws of physics as applied
+    to advanced training methodologies. Its pages reveal techniques and theories
+    that challenge conventional perceptions of time and space, designed to optimize
+    human performance. Meticulously researched, each chapter immerses the reader
+    in a deep understanding of how fundamental forces can be manipulated to enhance
+    specific skills.
+  ItemType: 3
+  IsConsumable: 1
+  IsStackable: 0
+  MaxStack: 1
+  Quantity: 0
+  amountPoints: 1
+  SkillType: 0

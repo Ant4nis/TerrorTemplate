@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28030743bb664cdd997a3e0cc4eb6cdc, type: 3}
+  m_Name: ItemAmulet
+  m_EditorClassIdentifier: 
+  ID: TruthGod
+  Name: Truth God
+  Icon: {fileID: -2062521324, guid: f824de00e14807a4e98aa86d7570f3eb, type: 3}
+  Description: The overall shape of the amulet echoes the form of an eldritch entity,
+    with multiple symmetrical arms extending from a central core, suggesting a convergence
+    of multiple realities or dimensions. Each arm ends in a delicate, claw-like structure,
+    further enhancing its no human appearance. The amulet's aura radiates a palpable
+    sense of foreboding and immense power, as if it serves as a key to forbidden
+    knowledge and truths that are beyond the comprehension of mere mortals. Its origin,
+    material, and purpose are shrouded in mystery, making it a coveted object for
+    scholars and collectors of the hidden.
+  ItemType: 5
+  IsConsumable: 0
+  IsStackable: 0
+  MaxStack: 1
+  Quantity: 0
+  Amulet: {fileID: 11400000, guid: 3361178872aeb61499a18991c1d52f7e, type: 2}

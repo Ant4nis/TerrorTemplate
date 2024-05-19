@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346955f2027246a7b0dc4d690f94afb3, type: 3}
+  m_Name: ItemSkillBook_Occultism_01
+  m_EditorClassIdentifier: 
+  ID: occ01
+  Name: Forbidden Souls
+  Icon: {fileID: -1648473089, guid: f824de00e14807a4e98aa86d7570f3eb, type: 3}
+  Description: '"Forbidden Souls" plunges the reader into a dark narrative about
+    arcane knowledge and ancient secrets that were meant to stay hidden. Through
+    its pages, it explores the limits of the human soul and the consequences of crossing
+    forbidden boundaries. This book promises not only to unveil ancient mysteries
+    but also to teach how to manage the risks of knowing too much.'
+  ItemType: 3
+  IsConsumable: 1
+  IsStackable: 0
+  MaxStack: 1
+  Quantity: 0
+  amountPoints: 1
+  SkillType: 5

@@ -1,0 +1,785 @@
+fileFormatVersion: 2
+guid: 9f90077ee31f0fa46989137eda1fdd4c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI Descripcion Imagen
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 345
+        width: 129
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54d7503b9f02145498ae78f06e0ec9ac
+      internalID: 740057275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI inventario slot seleccionado
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 409
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb38b7bd37702844bd4150d9967576b
+      internalID: -1765867742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ui inventario slot elegido
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 361
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b8612f22d83544996fd7a3faf379e1
+      internalID: -2045574185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Inventario slot
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 361
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8003e90f5091eeb4c9e77e829e9f3c6e
+      internalID: -379161864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Libro - Rojo
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 329
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a761ac8f1a25b374787581dd1e771a52
+      internalID: -936999087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scroll Bar movible
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 285
+        width: 5
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43ab19c52cd345499f8f8bd369ced86
+      internalID: -1623475864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scroll bar fondo
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 251
+        width: 5
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a996bf78478ad4bb387a4bb9511215
+      internalID: -1174421332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Iconop Inv Peque\xF1o"
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 266
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d253e9f20c0154cb47d434e4196514
+      internalID: 879354740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Icono Diario Peque\xF1o"
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 266
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f647ebed03e8a434db748f09d079f6b9
+      internalID: 1809799759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Icono Opciones Peque\xF1o"
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 265
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86c6d1562b4c4847a08c5233b6f0dfa
+      internalID: -335678748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icono Inv Grande
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 235
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 248666f5471274e4483713b8566871d2
+      internalID: 97545423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icono Diario Grande
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 235
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5fa6d9b5171dae459ea30feb18f51af
+      internalID: -1554559056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icono Opciones Grande
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 233
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8048ce03b54f83241be909832f8af09b
+      internalID: 678797980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Borde UI Inicio
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 200
+        width: 270
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2afdd772f84964c43a4314e16367abd0
+      internalID: -1673832484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI Titulo
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 135
+        width: 270
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e2acff7fbe9daf4b84a323025d7eaf9
+      internalID: -2129403769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI SubTitulo
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 89
+        width: 220
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43184db9c55801047b5318f291517ebf
+      internalID: 1383572730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Borde Ui Divisor
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 57
+        width: 260
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff824a63fc9a2d740a6f38fd4c9f5ff6
+      internalID: -1501908232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Borde Ui final
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 25
+        width: 269
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97a837256c1753e42acf26b249dccc28
+      internalID: 1658905589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Libro  - Morado
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 329
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b02f41c73837544d964fe58b596a7b3
+      internalID: -1885463316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shett - Ui - Pags sections_0
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 409
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a98f973a685fd4c4e9d0bb8b06023007
+      internalID: 1470051954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shett - Ui - Pags sections_1
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 449
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ce33c6b8717db45bf84e9a1bc7adee
+      internalID: 1729052365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shett - Ui - Pags sections_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 302
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae8ff0b92be0b14e9c2a25d04a93390
+      internalID: 2039006493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shett - Ui - Pags sections_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 430
+        width: 80
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 1, z: 20, w: 3}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da2dcffad31b1ba4d9f263c13e9b3ba5
+      internalID: -607461695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shett - Ui - Pags sections_4
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 449
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 920659b87fd6bb44d8e7d1ecc9157d64
+      internalID: -2043897321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shett - Ui - Pags sections_5
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 457
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af7bda6ca13e56a489b412c2abfffb19
+      internalID: -1935304342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shett - Ui - Pags sections_6
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 281
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c1a0e4770c510044aebcc6c9124c70d
+      internalID: -813697585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shett - Ui - Pags sections_7
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 451
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ae1be010895e94a9dab01d6c0ee86c
+      internalID: 268270111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Borde UI Inicio: -1673832484
+      Borde Ui Divisor: -1501908232
+      Borde Ui final: 1658905589
+      Icono Diario Grande: -1554559056
+      "Icono Diario Peque\xF1o": 1809799759
+      Icono Inv Grande: 97545423
+      Icono Opciones Grande: 678797980
+      "Icono Opciones Peque\xF1o": -335678748
+      "Iconop Inv Peque\xF1o": 879354740
+      Libro  - Morado: -1885463316
+      Libro - Rojo: -936999087
+      Scroll Bar movible: -1623475864
+      Scroll bar fondo: -1174421332
+      Shett - Ui - Pags sections_0: 1470051954
+      Shett - Ui - Pags sections_1: 1729052365
+      Shett - Ui - Pags sections_16: -1973112711
+      Shett - Ui - Pags sections_17: -461205950
+      Shett - Ui - Pags sections_18: -496556448
+      Shett - Ui - Pags sections_19: -2126435502
+      Shett - Ui - Pags sections_2: 2039006493
+      Shett - Ui - Pags sections_20: -2067471553
+      Shett - Ui - Pags sections_21: 522037956
+      Shett - Ui - Pags sections_22: -817973907
+      Shett - Ui - Pags sections_23: -1864876447
+      Shett - Ui - Pags sections_25: 846815965
+      Shett - Ui - Pags sections_26: 884014008
+      Shett - Ui - Pags sections_27: 1618057899
+      Shett - Ui - Pags sections_28: -1762855811
+      Shett - Ui - Pags sections_29: 341402367
+      Shett - Ui - Pags sections_3: -607461695
+      Shett - Ui - Pags sections_30: 1819646283
+      Shett - Ui - Pags sections_33: -908089297
+      Shett - Ui - Pags sections_34: 741913276
+      Shett - Ui - Pags sections_35: 1699316853
+      Shett - Ui - Pags sections_36: -778907842
+      Shett - Ui - Pags sections_37: -982689276
+      Shett - Ui - Pags sections_39: 1946382011
+      Shett - Ui - Pags sections_4: -2043897321
+      Shett - Ui - Pags sections_40: -1483376092
+      Shett - Ui - Pags sections_41: 1586309624
+      Shett - Ui - Pags sections_42: -37800686
+      Shett - Ui - Pags sections_43: 1356433506
+      Shett - Ui - Pags sections_44: -1234659626
+      Shett - Ui - Pags sections_45: -675590120
+      Shett - Ui - Pags sections_46: 647082389
+      Shett - Ui - Pags sections_47: 595454517
+      Shett - Ui - Pags sections_48: -178050637
+      Shett - Ui - Pags sections_49: 507952998
+      Shett - Ui - Pags sections_5: -1935304342
+      Shett - Ui - Pags sections_50: -1257713409
+      Shett - Ui - Pags sections_52: 1600506077
+      Shett - Ui - Pags sections_53: 406203191
+      Shett - Ui - Pags sections_54: 328763540
+      Shett - Ui - Pags sections_55: -1386758499
+      Shett - Ui - Pags sections_56: -1772473783
+      Shett - Ui - Pags sections_57: 811344261
+      Shett - Ui - Pags sections_58: -649394829
+      Shett - Ui - Pags sections_6: -813697585
+      Shett - Ui - Pags sections_7: 268270111
+      UI Descripcion Imagen: 740057275
+      UI Inventario slot: -379161864
+      UI SubTitulo: 1383572730
+      UI Titulo: -2129403769
+      UI inventario slot seleccionado: -1765867742
+      Ui inventario slot elegido: -2045574185
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

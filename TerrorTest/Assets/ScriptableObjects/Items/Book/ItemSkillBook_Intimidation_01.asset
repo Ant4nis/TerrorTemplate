@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346955f2027246a7b0dc4d690f94afb3, type: 3}
+  m_Name: ItemSkillBook_Intimidation_01
+  m_EditorClassIdentifier: 
+  ID: int01
+  Name: Intimidation Art Vol. I
+  Icon: {fileID: -1998775919, guid: f824de00e14807a4e98aa86d7570f3eb, type: 3}
+  Description: This book provides a fascinating journey into the art of intimidation,
+    focusing on how body language, tone of voice, and word choice can influence others'
+    perceptions and behaviors. By examining historic intimidation strategies used
+    by iconic figures, the reader will learn to develop a commanding presence that
+    can alter power dynamics in any given situation.
+  ItemType: 3
+  IsConsumable: 1
+  IsStackable: 0
+  MaxStack: 1
+  Quantity: 0
+  amountPoints: 1
+  SkillType: 1

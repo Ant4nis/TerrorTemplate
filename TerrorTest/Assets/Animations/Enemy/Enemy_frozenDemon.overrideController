@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Enemy_frozenDemon
+  m_Controller: {fileID: 9100000, guid: 4bb581d5201adcb45a7845faf5ae2ea4, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 46e661306c971e840aa65a28afb26a80, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b05b81a158661d64d99d325dd8beb1d7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 75b695a1cf91b4b46a3f92511b058411, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8ba25742cee408644bffb0c7f5db0013, type: 2}

@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - Unsafe
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Enemy
+  - Player
+  - SolidObjects
+  - Projectile
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 908767039
+    locked: 0
+  - name: MiddleGround
+    uniqueID: 1951414761
+    locked: 0
+  - name: Player
+    uniqueID: 1632167269
+    locked: 0
+  - name: Foreground
+    uniqueID: 714489859
+    locked: 0
+  - name: Projectile
+    uniqueID: 1922059795
+    locked: 0
+  - name: UI
+    uniqueID: 4014306935
+    locked: 0

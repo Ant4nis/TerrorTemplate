@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af00b9890ccce054580703f66cb30870, type: 3}
+  m_Name: ItemWeapon_Bow
+  m_EditorClassIdentifier: 
+  ID: WeaponBow
+  Name: Bow
+  Icon: {fileID: 21300000, guid: f43beb2b739d7654fadb6f7318b2f60e, type: 3}
+  Description: 'A traditional bow made of sturdy wood, ideal for deadly accurate
+    ranged attacks."
+
+'
+  ItemType: 0
+  IsConsumable: 0
+  IsStackable: 0
+  MaxStack: 1
+  Quantity: 0
+  Weapon: {fileID: 11400000, guid: 4a18dac43028ba04d9181cb05f47fb33, type: 2}

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346955f2027246a7b0dc4d690f94afb3, type: 3}
+  m_Name: ItemSkillBook_Astrology_01
+  m_EditorClassIdentifier: 
+  ID: ast01
+  Name: We are Stars Vol. I
+  Icon: {fileID: -1558300063, guid: f824de00e14807a4e98aa86d7570f3eb, type: 3}
+  Description: This first volume introduces readers to the practices where celestial
+    bodies not only influence human fates but are gateways to realms of cosmic horror
+    and ancient wisdom. With a dark approach, the book explores how the alignment
+    of fictional planets and stars can trigger supernatural events and alter known
+    reality. Essential for those seeking to understand the hidden forces governing
+    a cosmos of unfathomable mystery.
+  ItemType: 3
+  IsConsumable: 1
+  IsStackable: 0
+  MaxStack: 1
+  Quantity: 0
+  amountPoints: 1
+  SkillType: 4

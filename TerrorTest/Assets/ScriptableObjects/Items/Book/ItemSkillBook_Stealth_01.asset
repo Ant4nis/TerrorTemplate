@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346955f2027246a7b0dc4d690f94afb3, type: 3}
+  m_Name: ItemSkillBook_Stealth_01
+  m_EditorClassIdentifier: 
+  ID: ste01
+  Name: The Art of Being Unseen Vol. I
+  Icon: {fileID: -775481085, guid: f824de00e14807a4e98aa86d7570f3eb, type: 3}
+  Description: This first volume addresses techniques and strategies for achieving
+    invisibility in both a figurative and literal sense. It explores detailed methods
+    for fading from sight and public perception, using both psychology and environmental
+    tactics. "The Art of Being Unseen" is an essential guide for those who wish to
+    master the art of going unnoticed, whether in social situations or in dangerous
+    environments.
+  ItemType: 3
+  IsConsumable: 1
+  IsStackable: 0
+  MaxStack: 1
+  ProtectionRange: 0
+  NeedSkill: 0
+  SkillLevel: 0
+  Quantity: 0
+  amountPoints: 1
+  SkillType: 2

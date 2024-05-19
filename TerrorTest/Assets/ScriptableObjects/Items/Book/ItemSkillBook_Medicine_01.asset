@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346955f2027246a7b0dc4d690f94afb3, type: 3}
+  m_Name: ItemSkillBook_Medicine_01
+  m_EditorClassIdentifier: 
+  ID: med01
+  Name: Human Body Anatomy Vol. I
+  Icon: {fileID: -927203191, guid: f824de00e14807a4e98aa86d7570f3eb, type: 3}
+  Description: This first volume provides a thorough exploration of human anatomy,
+    detailing the structure and function of the skeletal and muscular systems. Featuring
+    precise illustrations and clear descriptions, the book is an indispensable tool
+    for those looking to understand the complexity of the human body from both a
+    scientific and practical perspective. Ideal for students and professionals in
+    the health field, as well as anyone interested in the marvel of human design.
+  ItemType: 3
+  IsConsumable: 1
+  IsStackable: 0
+  MaxStack: 1
+  ProtectionRange: 0
+  NeedSkill: 0
+  SkillLevel: 0
+  Quantity: 0
+  amountPoints: 1
+  SkillType: 3
