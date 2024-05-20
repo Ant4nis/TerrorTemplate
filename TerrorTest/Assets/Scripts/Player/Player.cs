@@ -15,18 +15,20 @@ public class Player : MonoBehaviour
     public ItemSkillBook SkillBook;
 
     [Header("Reviving Player")]
-    [Tooltip("If true, when reviving player all stats set to initial values, if false, only restores health, madness and temperature")] [SerializeField] 
+    [Tooltip("If true, when reviving player all stats set to initial values, if false, only restores health, madness and temperature")]
+    [SerializeField] 
     private bool resetAllStats;
 
     [Header("Customizable Details")]
     [Tooltip("Stop moving when a wall is in front of")]
     public bool stopAtWall;
-    
+
     [Tooltip("Layer masks to detect as wall")]
     public LayerMask wallMask;
-    
+
     [Header("Scriptable Object to Add")]
-    [Tooltip("Scriptable Object contain with player statistics")] [SerializeField] 
+    [Tooltip("Scriptable Object containing player statistics")]
+    [SerializeField] 
     private PlayerStats stats;
 
     private bool isDead; 
@@ -39,17 +41,13 @@ public class Player : MonoBehaviour
     public PlayerAmmo PlayerAmmo { get; private set; }
     public PlayerHealth PlayerHealth { get; private set; }
     public PlayerTemperature PlayerTemperature { get; private set; }
-    public PlayerMadness PlayerMadness { get; private set; }  // todo: implement
+    public PlayerMadness PlayerMadness { get; private set; }
     public PlayerAttack PlayerAttack { get; private set; }
-    
-    
     public PlayerStats Stats => stats;
-    
     public bool IsAttacking { get; set; }
-    
+
     private PlayerAnimations animations;
 
-    
     private void Awake()
     {
         PlayerHealth = GetComponent<PlayerHealth>();
@@ -60,53 +58,27 @@ public class Player : MonoBehaviour
         animations = GetComponent<PlayerAnimations>();
     }
 
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            if (HealthKit.UseItem())
-            {
-                Debug.Log("Using health kit");
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            if (HotPotion.UseItem())
-            {
-                Debug.Log("using hot potion");
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            if (Trankimazin.UseItem())
-            {
-                Debug.Log("using trankimazin");
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if (SkillBook.UseItem())
-            {
-                Debug.Log("using skill book");
-            }
-        }
-    }
-
+    /// <summary>
+    /// Sets the player state to dead and stops any attacking actions.
+    /// </summary>
     private void SetDeadPlayer()
     {
         isDead = true;
         IsAttacking = false;
     }
 
+    /// <summary>
+    /// Sets the player state to frozen and stops any attacking actions.
+    /// </summary>
     private void SetFrozenPlayer()
     {
         isFrozen = true;
         IsAttacking = false;
     }
 
+    /// <summary>
+    /// Revives the player, restoring health and other stats based on the resetAllStats flag.
+    /// </summary>
     public void RevivePlayer()
     {
         isDead = false;
@@ -119,26 +91,24 @@ public class Player : MonoBehaviour
             PlayerAmmo.ReloadAmmo();
             return;
         }
-        
+
         stats.MinimumResetStats();
         animations.ResetPlayer();
         PlayerAmmo.ReloadAmmo();
     }
-    
 
     /// <summary>
-    /// Registers the SetDeadAnimation method to the playerDeathEvent event.
-    /// This ensures the animation is triggered when the player dies, frozen or get full Madness.
+    /// Registers the SetDeadPlayer and SetFrozenPlayer methods to the playerDeathEvent and playerFrozenEvent events.
+    /// This ensures the appropriate state is set when the player dies or gets frozen.
     /// </summary>
     private void OnEnable()
     {
         PlayerHealth.playerDeathEvent += SetDeadPlayer;
         PlayerTemperature.playerFrozenEvent += SetFrozenPlayer;
-
     }
 
     /// <summary>
-    /// Unregisters the SetDeadAnimation method from the playerDeathEvent event.
+    /// Unregisters the SetDeadPlayer and SetFrozenPlayer methods from the playerDeathEvent and playerFrozenEvent events.
     /// This is necessary to clean up references when the script is disabled.
     /// </summary>
     private void OnDisable()

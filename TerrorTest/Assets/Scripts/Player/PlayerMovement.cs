@@ -1,31 +1,39 @@
 using UnityEngine;
 
+/// <summary>
+/// Manages the movement of the player character, including walking and running speeds,
+/// handling input for movement, and checking for obstacles using raycasting.
+/// </summary>
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Player Velocity")] 
-    [Tooltip("The walking speed of the player in units per second.")] [SerializeField] 
+    [Header("Player Velocity")]
+    [Tooltip("The walking speed of the player in units per second.")]
+    [SerializeField]
     private float walkingSpeed;
-    [Tooltip("The running speed of the player in units per second.")] [SerializeField] 
+
+    [Tooltip("The running speed of the player in units per second.")]
+    [SerializeField]
     private float runningSpeed;
-    
+
     private float currentSpeed;
 
-    [Header("Raycast Configuration")] 
-    [Tooltip("The distance of the ray to check if is touching a wall")] [SerializeField] 
+    [Header("Raycast Configuration")]
+    [Tooltip("The distance of the ray to check if is touching a wall")]
+    [SerializeField]
     private float rayDistance;
 
     public float WalkingSpeed => walkingSpeed;
     public float RunningSpeed => runningSpeed;
     public Vector2 MoveDirection => moveDirection;
     public Vector2 LastMoveDirection => lastMoveDirection;
-    
+
     private PlayerActions actions;
     private PlayerAnimations playerAnimations;
     private Player player;
     private Rigidbody2D rb;
     private Vector2 moveDirection;
     private CircleCollider2D circleCollider2D;
-    
+
     private Vector2 lastMoveDirection;
 
     /// <summary>
@@ -36,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         player = GetComponent<Player>();
         actions = new PlayerActions();
         rb = GetComponent<Rigidbody2D>();
-        playerAnimations = GetComponent<PlayerAnimations>();       
+        playerAnimations = GetComponent<PlayerAnimations>();
         circleCollider2D = GetComponent<CircleCollider2D>();
         currentSpeed = walkingSpeed;
     }
@@ -82,7 +90,6 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void ReadMovement()
     {
-        
         Vector2 inputDirection = actions.Movement.Move.ReadValue<Vector2>().normalized;
 
         if (inputDirection != Vector2.zero)
@@ -130,7 +137,7 @@ public class PlayerMovement : MonoBehaviour
         if (circleCollider2D != null)
         {
             float distance = circleCollider2D.radius + 0.05f;
-        
+
             Vector2 direction = moveDirection.normalized;
             Vector2 colliderCenterPosition = (Vector2)transform.position + new Vector2(0, circleCollider2D.offset.y);
 

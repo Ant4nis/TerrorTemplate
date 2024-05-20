@@ -8,54 +8,61 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
     [Header("Scriptable Objects to Add")]
-    [Tooltip("Scriptable Object that contains player statistics")] [SerializeField] 
+    [Tooltip("Scriptable Object that contains player statistics")]
+    [SerializeField] 
     private PlayerStats stats;
-    
-    [Header("Customizable")] [Tooltip("Show a visual number with the damage the player get")]
+
+    [Header("Customizable")]
+    [Tooltip("Show a visual number with the damage the player gets")]
     public bool showDamageText;
 
-    private float CurrentHealth;
-    
+    private float currentHealth;
+
+    /// <summary>
     /// Event triggered when the player's health reaches zero.
+    /// </summary>
     public delegate void OnPlayerDeath();
     public event OnPlayerDeath playerDeathEvent;
 
     private void Start()
     {
-        
+        currentHealth = stats.Health;
     }
 
     private void Update()
     {
         // Only for Debug
-
         if (Input.GetKeyDown(KeyCode.P))
         {
             TakeDamage(1f);
         }
     }
 
-    /// Applies damage to the player's health and triggers death event if health falls to zero or below.
     /// <summary>
-    /// <param buttonName="amount">The amount of damage to apply.</param>
+    /// Applies damage to the player's health and triggers death event if health falls to zero or below.
     /// </summary>
+    /// <param name="amount">The amount of damage to apply.</param>
     public void TakeDamage(float amount)
     {
         if (stats.Health <= 0) return;
         stats.Health -= amount;
-        
+
         if (showDamageText)
         {
             DamageManager.Instance.ShowDamageText(amount, transform);
         }
-        
-        if (stats.Health <= 0f )
+
+        if (stats.Health <= 0f)
         {
             stats.Health = 0f;
-            PlayerDead();    
+            PlayerDead();
         }
     }
 
+    /// <summary>
+    /// Restores health to the player up to the maximum health limit.
+    /// </summary>
+    /// <param name="amount">The amount of health to restore.</param>
     public void RestoreHealth(float amount)
     {
         stats.Health += amount;
@@ -65,6 +72,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         }
     }
 
+    /// <summary>
+    /// Checks if the player's health can be restored.
+    /// </summary>
+    /// <returns>True if health can be restored, false otherwise.</returns>
     public bool CanRestoreHealth()
     {
         return stats.Health > 0 && stats.Health < stats.MaxHealth;

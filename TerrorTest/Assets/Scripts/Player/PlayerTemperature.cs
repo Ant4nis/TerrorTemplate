@@ -7,10 +7,9 @@ using UnityEngine;
 /// </summary>
 public class PlayerTemperature : MonoBehaviour, IFreezable
 {
-    //public float amountToLoss;
-
     [Header("Scriptable Object")]
-    [Tooltip("Player statistics")] [SerializeField] 
+    [Tooltip("Player statistics")]
+    [SerializeField] 
     private PlayerStats stats;
 
     private Player player;
@@ -50,7 +49,7 @@ public class PlayerTemperature : MonoBehaviour, IFreezable
             PlayerFrozen();
         }
     }
-    
+
     /// <summary>
     /// Restores temperature to the player's current temperature up to the maximum temperature.
     /// </summary>
@@ -63,10 +62,11 @@ public class PlayerTemperature : MonoBehaviour, IFreezable
             stats.Temperature = stats.MaxTemperature;
         }
     }
-    
+
     /// <summary>
     /// Starts the coroutine to continuously lose temperature over time.
     /// </summary>
+    /// <param name="amount">The amount of temperature to lose per second.</param>
     public void StartLosingTemperature(float amount)
     {
         if (temperatureCoroutine != null) return;
@@ -85,10 +85,11 @@ public class PlayerTemperature : MonoBehaviour, IFreezable
         StopCoroutine(temperatureCoroutine);
         temperatureCoroutine = null;
     }
-    
+
     /// <summary>
-    /// Starts the coroutine to continuously recovers temperature over time.
+    /// Starts the coroutine to continuously recover temperature over time.
     /// </summary>
+    /// <param name="amount">The amount of temperature to recover per second.</param>
     public void StartRecoveringTemperature(float amount)
     {
         if (temperatureCoroutine != null) return;
@@ -112,24 +113,24 @@ public class PlayerTemperature : MonoBehaviour, IFreezable
     /// <summary>
     /// Coroutine to lose temperature over time.
     /// </summary>
+    /// <param name="amount">The amount of temperature to lose per second.</param>
     private IEnumerator LoseTemperatureOverTime(float amount)
     {
         while (true)
         {
-            //  GetComponent(IFreezable)?.loss
             LossTemperature(amount * Time.deltaTime);
             yield return null;
         }
     }
-    
+
     /// <summary>
     /// Coroutine to restore temperature over time.
     /// </summary>
+    /// <param name="amount">The amount of temperature to recover per second.</param>
     private IEnumerator RestoreTemperatureOverTime(float amount)
     {
         while (true)
         {
-            //  GetComponent(IFreezable)?.loss
             RestoreTemperature(amount * Time.deltaTime);
             yield return null;
         }
@@ -151,6 +152,4 @@ public class PlayerTemperature : MonoBehaviour, IFreezable
     {
         playerFrozenEvent?.Invoke();
     }
-
-    
 }
