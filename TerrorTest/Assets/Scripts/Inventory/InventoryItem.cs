@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Enumeration of different item types in the game.
+/// </summary>
 public enum ItemType
 {
     Weapon,     //weapons
@@ -13,63 +16,103 @@ public enum ItemType
 }
 
 
+/// <summary>
+/// Represents an item in the inventory.
+/// </summary>
 [CreateAssetMenu(menuName = "Items/Item")]
 public class InventoryItem : ScriptableObject
 {
     [Header("Item Configuration")] 
     [Tooltip("Identifier")]
     public string ID;
+
     [Tooltip("Item name")]
     public string Name;
-    [Tooltip("Item icon for ui")]
+
+    [Tooltip("Item icon for UI")]
     public Sprite Icon;
+
     [Tooltip("Item description")]
-    [TextArea] public string Description;
+    [TextArea] 
+    public string Description;
 
     [Header("Information")]
     [Tooltip("Item type to apply different options")]
     public ItemType ItemType;
-    [Tooltip("If you can use it")]
+
+    [Tooltip("If the item can be used")]
     public bool IsConsumable;
-    [Tooltip("If you can stack a defined quantity to a slot")]
+
+    [Tooltip("If the item can stack a defined quantity in a slot")]
     public bool IsStackable;
-    [Tooltip("Define max quantity you can stack in a slot")]
+
+    [Tooltip("Defines the maximum quantity you can stack in a slot")]
     public int MaxStack;
 
-    [Header("Magic Configuration")]
-    //public Magic MagicProtection;
-    //public Item ItemRequired;
-    public float ProtectionRange;
+   /* [Header("Magic Configuration")]
+    [Tooltip("Protection range for magical items")]
+    public float ProtectionRange;*/
+
+    // Future implementations
+   /* [Tooltip("Magic protection associated with the item")]
+    public Magic MagicProtection;*/
+
+    [Tooltip("Required item for certain functionalities")]
+    public InventoryItem ItemRequired;
 
     [Header("Required SkillType")]
+    [Tooltip("If the item requires a specific skill level to use")]
     public bool NeedSkill;
-    //public Player skill;
+
+    // Future implementations
+    [Tooltip("Player skill required to use the item")]
+    public Player Skill;
+
+    [Tooltip("The skill level required to use the item")]
     public float SkillLevel;
-    
-    [HideInInspector]public int Quantity; // to get a variable of the quantity available 
-    
+
+    /// <summary>
+    /// The quantity of this item available in the inventory.
+    /// </summary>
+    [HideInInspector] 
+    public int Quantity;
+
+    /// <summary>
+    /// Creates a copy of the inventory item.
+    /// </summary>
+    /// <returns>A new instance of the InventoryItem.</returns>
     public InventoryItem CopyItem()
     {
         InventoryItem instance = Instantiate(this);
         return instance;
     }
 
+    /// <summary>
+    /// Uses the item if it is consumable.
+    /// </summary>
+    /// <returns>True if the item was used, false otherwise.</returns>
     public virtual bool UseItem()
     {
-        if (IsConsumable == false)
+        if (!IsConsumable)
         {
             return false;
         }
-        return true; //by default
+        return true; // by default
     }
 
+    /// <summary>
+    /// Equips the item.
+    /// </summary>
     public virtual void EquipItem()
     {
-        
+        // Default implementation does nothing.
     }
 
+    /// <summary>
+    /// Destroys the item.
+    /// </summary>
     public virtual void DestroyItem()
     {
-        
+        // Default implementation does nothing.
     }
 }

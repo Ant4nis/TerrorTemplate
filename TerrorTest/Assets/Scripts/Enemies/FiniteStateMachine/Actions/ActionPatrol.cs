@@ -17,10 +17,7 @@ public class ActionPatrol : SMAction
     private Waypoint waypoint; // Reference to the Waypoint component which holds the patrol path points.
     private int pointIndex; // Current index in the waypoint array.
     private Vector3 nextPosition; // Next position in the patrol path to move towards.
-    
-    /// <summary>
-    /// Initializes the patrol action by retrieving the Waypoint component.
-    /// </summary>
+
     private void Awake()
     {
         waypoint = GetComponent<Waypoint>();
@@ -52,9 +49,7 @@ public class ActionPatrol : SMAction
     /// </summary>
     private void UpdateNextPosition()
     {
-        // Increment the point index to move to the next waypoint.
         pointIndex++;
-        // If we reach the end of the array, reset to the beginning.
         if (pointIndex > waypoint.Points.Length - 1)
         {
             pointIndex = 0;

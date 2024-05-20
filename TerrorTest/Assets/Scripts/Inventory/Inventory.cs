@@ -3,36 +3,53 @@ using System.Collections.Generic;
 using BayatGames.SaveGameFree;
 using UnityEngine;
 
+/// <summary>
+/// Manages the player's inventory, including adding, using, equipping, and destroying items.
+/// Also handles saving and loading the inventory state.
+/// </summary>
 public class Inventory : Singleton<Inventory>
 {
-    [Header("Inventory Config")] 
-    [Tooltip("If you want to auto save and auto load inventory")] [SerializeField]
+    [Header("Inventory Config")]
+    [Tooltip("If you want to auto save and auto load inventory")]
+    [SerializeField]
     private bool autoSaveInventory = true; 
-    [Tooltip("The inventory content to load")] [SerializeField]
+    
+    [Tooltip("The inventory content to load")]
+    [SerializeField]
     private GameContent gameContent;
-    [Tooltip("The number of inventory slots")] [SerializeField]
+    
+    [Tooltip("The number of inventory slots")]
+    [SerializeField]
     private int inventorySize;
-    [Tooltip("The array to store our items")] [SerializeField]
+    
+    [Tooltip("The array to store our items")]
+    [SerializeField]
     private InventoryItem[] inventoryItems;
 
-    [Header("Testing")] 
+    [Header("Testing")]
     public InventoryItem testItem;
+
+    /// <summary>
+    /// Gets the size of the inventory.
+    /// </summary>
     public int InventorySize => inventorySize;
+    
+    /// <summary>
+    /// Gets the array of inventory items.
+    /// </summary>
     public InventoryItem[] InventoryItems => inventoryItems;
 
     private readonly string INVENTORY_KEY_DATA = "USER_INVENTORY";
-    
-    public void Start()
+
+    private void Start()
     {
         inventoryItems = new InventoryItem[inventorySize];
         VerifyItemsForDraw();
-        
-        //testin use in main menu "Continue"
+
         if (autoSaveInventory)
         {
             LoadInventory();
         }
-        //DeleteInventory();
     }
 
     private void Update()
@@ -42,12 +59,16 @@ public class Inventory : Singleton<Inventory>
             AddItem(testItem, 1);
         }
     }
-    
-    //Add Item
+
+    /// <summary>
+    /// Adds an item to the inventory.
+    /// </summary>
+    /// <param name="item">The item to add.</param>
+    /// <param name="quantity">The quantity of the item to add.</param>
     public void AddItem(InventoryItem item, int quantity)
     {
         if (item == null || quantity <= 0) return;
-        
+
         List<int> itemIndexes = CheckItemStock(item.ID);
         if (item.IsStackable && itemIndexes.Count > 0)
         {
@@ -63,9 +84,9 @@ public class Inventory : Singleton<Inventory>
                         inventoryItems[index].Quantity = maxStack;
                         AddItem(item, difference);
                     }
-                    
+
                     InventoryUI.Instance.DrawItem(inventoryItems[index], index);
-                    if(autoSaveInventory)
+                    if (autoSaveInventory)
                     {
                         SaveInventory();
                     }
@@ -77,18 +98,22 @@ public class Inventory : Singleton<Inventory>
         int quantityToAdd = quantity > item.MaxStack ? item.MaxStack : quantity;
         AddItemFreeSlot(item, quantityToAdd);
         int remainingAmount = quantity - quantityToAdd;
-        
+
         if (remainingAmount > 0)
         {
-            AddItem(item,remainingAmount);
+            AddItem(item, remainingAmount);
         }
-        
-        if(autoSaveInventory)
+
+        if (autoSaveInventory)
         {
             SaveInventory();
         }
     }
 
+    /// <summary>
+    /// Uses an item from the inventory.
+    /// </summary>
+    /// <param name="index">The index of the item in the inventory.</param>
     public void UseItem(int index)
     {
         if (inventoryItems[index] == null) return;
@@ -96,13 +121,17 @@ public class Inventory : Singleton<Inventory>
         {
             DecreaseItemStack(index);
         }
-        
-        if(autoSaveInventory)
+
+        if (autoSaveInventory)
         {
             SaveInventory();
         }
     }
 
+    /// <summary>
+    /// Destroys an item from the inventory.
+    /// </summary>
+    /// <param name="index">The index of the item in the inventory.</param>
     public void DestroyItem(int index)
     {
         if (inventoryItems[index] == null) return;
@@ -110,26 +139,35 @@ public class Inventory : Singleton<Inventory>
         inventoryItems[index].DestroyItem();
         inventoryItems[index] = null;
         InventoryUI.Instance.DrawItem(null, index);
-        
-        if(autoSaveInventory)
+
+        if (autoSaveInventory)
         {
             SaveInventory();
         }
     }
 
+    /// <summary>
+    /// Equips an item from the inventory.
+    /// </summary>
+    /// <param name="index">The index of the item in the inventory.</param>
     public void EquipItem(int index)
     {
         if (inventoryItems[index] == null) return;
 
-        if ((inventoryItems[index].ItemType != ItemType.Weapon) && (inventoryItems[index].ItemType != ItemType.Light)) return;
+        if (inventoryItems[index].ItemType != ItemType.Weapon && inventoryItems[index].ItemType != ItemType.Light) return;
         inventoryItems[index].EquipItem();
     }
-    
+
+    /// <summary>
+    /// Adds an item to the first available free slot in the inventory.
+    /// </summary>
+    /// <param name="item">The item to add.</param>
+    /// <param name="quantity">The quantity of the item to add.</param>
     private void AddItemFreeSlot(InventoryItem item, int quantity)
     {
         for (int i = 0; i < inventorySize; i++)
         {
-            if (inventoryItems[i] != null) continue; // continue to the next
+            if (inventoryItems[i] != null) continue;
             inventoryItems[i] = item.CopyItem();
             inventoryItems[i].Quantity = quantity;
             InventoryUI.Instance.DrawItem(inventoryItems[i], i);
@@ -137,6 +175,10 @@ public class Inventory : Singleton<Inventory>
         }
     }
 
+    /// <summary>
+    /// Decreases the stack size of an item in the inventory.
+    /// </summary>
+    /// <param name="index">The index of the item in the inventory.</param>
     private void DecreaseItemStack(int index)
     {
         inventoryItems[index].Quantity--;
@@ -150,7 +192,12 @@ public class Inventory : Singleton<Inventory>
             InventoryUI.Instance.DrawItem(inventoryItems[index], index);
         }
     }
-    
+
+    /// <summary>
+    /// Checks if an item is already in stock in the inventory.
+    /// </summary>
+    /// <param name="itemID">The ID of the item to check.</param>
+    /// <returns>A list of indices where the item is found in the inventory.</returns>
     private List<int> CheckItemStock(string itemID)
     {
         List<int> itemIndexes = new List<int>();
@@ -166,38 +213,44 @@ public class Inventory : Singleton<Inventory>
         return itemIndexes;
     }
 
+    /// <summary>
+    /// Verifies items for drawing in the inventory UI.
+    /// </summary>
     private void VerifyItemsForDraw()
     {
         for (int i = 0; i < inventorySize; i++)
         {
-            if (inventoryItems[i] == null)
-            {
-                InventoryUI.Instance.DrawItem(null, i);
-            }
+            InventoryUI.Instance.DrawItem(inventoryItems[i], i);
         }
     }
 
+    /// <summary>
+    /// Checks if an item exists in the game content.
+    /// </summary>
+    /// <param name="itemID">The ID of the item to check.</param>
+    /// <returns>The inventory item if it exists, null otherwise.</returns>
     private InventoryItem ItemExistsInGameContent(string itemID)
     {
         if (gameContent == null || gameContent.GameItems == null || gameContent.GameItems.Length == 0)
         {
-            Debug.LogError("GameContent no está configurado correctamente o está vacío.");
+            Debug.LogError("GameContent is not configured correctly or is empty.");
             return null;
         }
 
-        // Iterar sobre todos los elementos de gameContent.GameItems
-        for (int i = 0; i < gameContent.GameItems.Length; i++)
+        foreach (var item in gameContent.GameItems)
         {
-            if (gameContent.GameItems[i].ID == itemID)
+            if (item.ID == itemID)
             {
-                return gameContent.GameItems[i];
+                return item;
             }
         }
 
         return null;
     }
 
-
+    /// <summary>
+    /// Loads the inventory from saved data.
+    /// </summary>
     private void LoadInventory()
     {
         if (SaveGame.Exists(INVENTORY_KEY_DATA))
@@ -223,12 +276,16 @@ public class Inventory : Singleton<Inventory>
         }
     }
 
-    
+    /// <summary>
+    /// Saves the current state of the inventory.
+    /// </summary>
     private void SaveInventory()
     {
-        InventoryData saveData = new InventoryData();
-        saveData.ItemContent = new string[inventorySize];
-        saveData.ItemQuantity = new int[inventorySize];
+        InventoryData saveData = new InventoryData
+        {
+            ItemContent = new string[inventorySize],
+            ItemQuantity = new int[inventorySize]
+        };
 
         for (int i = 0; i < inventorySize; i++)
         {
@@ -243,10 +300,13 @@ public class Inventory : Singleton<Inventory>
                 saveData.ItemQuantity[i] = inventoryItems[i].Quantity;
             }
         }
-        
+
         SaveGame.Save(INVENTORY_KEY_DATA, saveData);
     }
 
+    /// <summary>
+    /// Deletes the saved inventory data.
+    /// </summary>
     public void DeleteInventory()
     {
         SaveGame.Delete(INVENTORY_KEY_DATA);

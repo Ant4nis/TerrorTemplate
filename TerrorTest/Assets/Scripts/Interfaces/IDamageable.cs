@@ -4,5 +4,9 @@
 /// </summary>
 public interface IDamageable
 {
+    /// <summary>
+    /// Inflicts damage to the entity.
+    /// </summary>
+    /// <param name="amount">The amount of damage to inflict.</param>
     void TakeDamage(float amount);
 }

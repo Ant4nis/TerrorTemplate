@@ -1,4 +1,3 @@
-
 using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -12,8 +11,10 @@ public class ActionWander : SMAction
     [Header("Movement Configuration")]
     [Tooltip("Enemy Speed")]
     [SerializeField] private float speed; // The speed at which the enemy moves.
+    
     [Tooltip("The time between movement direction changes")]
     [SerializeField] private float wanderTime; // How often the enemy changes its wandering direction.
+    
     [Tooltip("The range within which the enemy can move.")]
     [SerializeField] private Vector2 moveRange; // The range of random movement from the current position.
 
@@ -66,17 +67,6 @@ public class ActionWander : SMAction
 
         movePosition = transform.position + new Vector3(randomX, randomY);
     }
-
-   /* private bool CheckWall()
-    {
-        Vector3 moveDirection = (movePosition - transform.position).normalized;
-        Vector2 start = new Vector2(transform.position.x, transform.position.y);
-        float distance = circleCollider.radius + 0.05f;
-
-        RaycastHit2D hit = Physics2D.Raycast(start, moveDirection.normalized, distance, player.wallMask);
-
-        return hit.collider != null;
-    }*/
 
     /// <summary>
     /// Draws gizmos in the Unity editor to visualize the movement range and the next target position.

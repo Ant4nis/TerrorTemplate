@@ -129,7 +129,7 @@ public class PlayerAnimations : MonoBehaviour
     private void OnEnable()
     {
         playerHealth.playerDeathEvent += SetDeadAnimation;
-        playerTemperature.playerFreezedEvent += SetFrozenAnimation;
+        playerTemperature.playerFrozenEvent += SetFrozenAnimation;
     }
 
     /// <summary>
@@ -139,7 +139,7 @@ public class PlayerAnimations : MonoBehaviour
     private void OnDisable()
     {
         playerHealth.playerDeathEvent -= SetDeadAnimation;
-        playerTemperature.playerFreezedEvent -= SetFrozenAnimation;
+        playerTemperature.playerFrozenEvent -= SetFrozenAnimation;
     }
     
 }

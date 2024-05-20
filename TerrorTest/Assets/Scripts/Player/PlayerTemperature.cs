@@ -7,19 +7,22 @@ using UnityEngine;
 /// </summary>
 public class PlayerTemperature : MonoBehaviour, IFreezable
 {
-    public float amountToLoss;
+    //public float amountToLoss;
+
     [Header("Scriptable Object")]
     [Tooltip("Player statistics")] [SerializeField] 
     private PlayerStats stats;
-    
+
     private Player player;
-    
+
+    /// <summary>
     /// Event triggered when the player's temperature reaches zero.
-    public delegate void OnPlayerFreezed();
-    public event OnPlayerFreezed playerFreezedEvent;
+    /// </summary>
+    public delegate void OnPlayerFrozen();
+    public event OnPlayerFrozen playerFrozenEvent;
 
     private Coroutine temperatureCoroutine;
-    
+
     private void Awake()
     {
         player = GetComponent<Player>();
@@ -27,29 +30,31 @@ public class PlayerTemperature : MonoBehaviour, IFreezable
 
     private void Update()
     {
-        // Only for Debug
-        //if is only nosafe zone will loss a %
-
+        // Debug: Loss temperature when 'T' key is pressed.
         if (Input.GetKeyDown(KeyCode.T))
         {
-            LossTemperature(0.5f);
+            StartLosingTemperature(0.5f);
         }
     }
-    
+
     /// <summary>
-    /// Subtract temperature to the player's temperature and triggers frozen event if temperature falls to zero or below.
+    /// Subtracts temperature from the player's current temperature and triggers the frozen event if temperature falls to zero or below.
     /// </summary>
-    /// <param buttonName="amount">The amount of temperature to loss.</param>
-    public void LossTemperature(float amount)
+    /// <param name="amount">The amount of temperature to lose.</param>
+    private void LossTemperature(float amount)
     {
         stats.Temperature -= amount;
-        if (stats.Temperature <= 0 && player.IsFrozen == false)
+        if (stats.Temperature <= 0 && !player.IsFrozen)
         {
             stats.Temperature = 0f;
             PlayerFrozen();
         }
     }
-
+    
+    /// <summary>
+    /// Restores temperature to the player's current temperature up to the maximum temperature.
+    /// </summary>
+    /// <param name="amount">The amount of temperature to restore.</param>
     public void RestoreTemperature(float amount)
     {
         stats.Temperature += amount;
@@ -58,28 +63,16 @@ public class PlayerTemperature : MonoBehaviour, IFreezable
             stats.Temperature = stats.MaxTemperature;
         }
     }
-
-    public bool CanRestoreTemperature()
-    {
-        return stats.Temperature > 0 && stats.Temperature < stats.MaxTemperature;
-    }
     
     /// <summary>
-    /// Invokes the playerFrozenEvent to notify other components of the player's frozen.
+    /// Starts the coroutine to continuously lose temperature over time.
     /// </summary>
-    private void PlayerFrozen()
-    {
-        playerFreezedEvent?.Invoke();
-    }
-
-    /// <summary>
-    /// Starts the coroutine to continuously lose temperature.
-    /// </summary>
-    public void StartLosingTemperature()
+    public void StartLosingTemperature(float amount)
     {
         if (temperatureCoroutine != null) return;
-        
-        temperatureCoroutine = StartCoroutine(LoseTemperatureOverTime());
+        player.IsSafe = false;
+        player.IsUnsafe = true;
+        temperatureCoroutine = StartCoroutine(LoseTemperatureOverTime(amount));
     }
 
     /// <summary>
@@ -88,7 +81,30 @@ public class PlayerTemperature : MonoBehaviour, IFreezable
     public void StopLosingTemperature()
     {
         if (temperatureCoroutine == null) return;
-        
+        player.IsUnsafe = false;
+        StopCoroutine(temperatureCoroutine);
+        temperatureCoroutine = null;
+    }
+    
+    /// <summary>
+    /// Starts the coroutine to continuously recovers temperature over time.
+    /// </summary>
+    public void StartRecoveringTemperature(float amount)
+    {
+        if (temperatureCoroutine != null) return;
+        player.IsSafe = true;
+        player.IsUnsafe = false;
+        temperatureCoroutine = StartCoroutine(RestoreTemperatureOverTime(amount));
+    }
+
+    /// <summary>
+    /// Stops the coroutine that continuously recovers temperature.
+    /// </summary>
+    public void StopRecoveringTemperature()
+    {
+        if (temperatureCoroutine == null) return;
+        player.IsSafe = false;
+        player.IsUnsafe = false;
         StopCoroutine(temperatureCoroutine);
         temperatureCoroutine = null;
     }
@@ -96,14 +112,45 @@ public class PlayerTemperature : MonoBehaviour, IFreezable
     /// <summary>
     /// Coroutine to lose temperature over time.
     /// </summary>
-    /// <returns></returns>
-    private IEnumerator LoseTemperatureOverTime()
+    private IEnumerator LoseTemperatureOverTime(float amount)
     {
         while (true)
         {
-            LossTemperature(amountToLoss * Time.deltaTime);
+            //  GetComponent(IFreezable)?.loss
+            LossTemperature(amount * Time.deltaTime);
             yield return null;
         }
     }
+    
+    /// <summary>
+    /// Coroutine to restore temperature over time.
+    /// </summary>
+    private IEnumerator RestoreTemperatureOverTime(float amount)
+    {
+        while (true)
+        {
+            //  GetComponent(IFreezable)?.loss
+            RestoreTemperature(amount * Time.deltaTime);
+            yield return null;
+        }
+    }
+
+    /// <summary>
+    /// Checks if the player's temperature can be restored.
+    /// </summary>
+    /// <returns>True if the temperature is above zero and below the maximum temperature.</returns>
+    public bool CanRestoreTemperature()
+    {
+        return stats.Temperature > 0 && stats.Temperature < stats.MaxTemperature;
+    }
+
+    /// <summary>
+    /// Invokes the playerFrozenEvent to notify other components that the player is frozen.
+    /// </summary>
+    private void PlayerFrozen()
+    {
+        playerFrozenEvent?.Invoke();
+    }
+
     
 }

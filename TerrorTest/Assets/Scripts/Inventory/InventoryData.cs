@@ -1,9 +1,18 @@
 using System;
 
-
+/// <summary>
+/// Stores the data for the inventory, including item IDs and their quantities.
+/// </summary>
 [Serializable]
 public class InventoryData
 {
-    public string[] ItemContent;  // To store item Ids.
-    public int[] ItemQuantity;  // To store item quantity.
+    /// <summary>
+    /// Array to store item IDs.
+    /// </summary>
+    public string[] ItemContent;
+
+    /// <summary>
+    /// Array to store item quantities.
+    /// </summary>
+    public int[] ItemQuantity;
 }

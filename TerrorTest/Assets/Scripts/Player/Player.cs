@@ -30,8 +30,10 @@ public class Player : MonoBehaviour
     private PlayerStats stats;
 
     private bool isDead; 
-    private bool isFrozen; 
-    
+    private bool isFrozen;
+
+    public bool IsSafe { get; set; }
+    public bool IsUnsafe { get; set; }
     public bool IsDead => isDead;
     public bool IsFrozen => isFrozen;
     public PlayerAmmo PlayerAmmo { get; private set; }
@@ -122,22 +124,7 @@ public class Player : MonoBehaviour
         animations.ResetPlayer();
         PlayerAmmo.ReloadAmmo();
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Unsafe"))
-        {
-            PlayerTemperature.StartLosingTemperature();
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Unsafe"))
-        {
-            PlayerTemperature.StopLosingTemperature();
-        }
-    }
+    
 
     /// <summary>
     /// Registers the SetDeadAnimation method to the playerDeathEvent event.
@@ -146,7 +133,7 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {
         PlayerHealth.playerDeathEvent += SetDeadPlayer;
-        PlayerTemperature.playerFreezedEvent += SetFrozenPlayer;
+        PlayerTemperature.playerFrozenEvent += SetFrozenPlayer;
 
     }
 
@@ -157,6 +144,6 @@ public class Player : MonoBehaviour
     private void OnDisable()
     {
         PlayerHealth.playerDeathEvent -= SetDeadPlayer;
-        PlayerTemperature.playerFreezedEvent -= SetFrozenPlayer;
+        PlayerTemperature.playerFrozenEvent -= SetFrozenPlayer;
     }
 }
