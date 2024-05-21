@@ -15,3 +15,5 @@ I - Abrir/Cerrar inventario.
 C - Abrir/Cerrar estado. 
 
 P - Abrir/Cerrar stats.
+
+ESC - Cerrar Panel.
